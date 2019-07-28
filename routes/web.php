@@ -21,9 +21,12 @@ Route::get('/checkstatus', function () {
 Route::get('/reserve', function () {
     return view('reserve.reserve_home');
 })->name('reserve');
-Route::get('/reserve/reserve', function () {
-    return view('reserve.reserve');
-});
+
+Route::get('/reserve/{type}', 'ReserveController@reserve')->name('reserveform');
+Route::post('/reserve/store/', [
+	'as' => 'reserve.store',
+    'uses' => 'ReserveController@store']);
+    
 Route::get('/log', function () {
     return view('log.log');
 })->name('log');

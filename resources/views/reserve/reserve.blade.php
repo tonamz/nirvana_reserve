@@ -14,54 +14,61 @@
                 <hr >
             </div>
             <div class="category">
-                <form action="">
+        
+                <form id="form" method="post" action="{{ route('reserve.store') }}">
+                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                     <div class="row">
                         <div class="col-4">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">รูปแบบ :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="hidden" class="form-control" id="exampleFormControlInput1" name="type">
+                                <h3><span class="label label-default">{{$types->name}}</span></h3>
+                                
                             </div>
+                         
+                            
+                               
+                            
+                   
                         </div>
                         <div class="col-4">
                             <div class="form-group">
                             <label for="exampleFormControlSelect1">ยูนิต :</label>
-                            <select class="form-control" id="exampleFormControlSelect1">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                            <select class="form-control" name="id_unit">
+                            @foreach($unit as $units)
+                                <option name="id_unit" value="{{$units->id}}">{{ $units->unit }}</option>
+                            @endforeach
                             </select>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="form-group">
                             <label for="exampleFormControlInput1">ราคา :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="price" name="price" placeholder="กรุณาใส่ราคา">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                             <label for="exampleFormControlInput1">ชื่อ :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="กรุณาใส่ชื่อ">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-group">
                             <label for="exampleFormControlInput1">นามสกุล :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="กรุณาใส่นามสกุล">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                             <label for="exampleFormControlInput1">เบอร์โทรศัพท์ที่ติดต่อได้ :</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="text" class="form-control" id="telephone" name="telephone" placeholder="กรุณาใส่เบอร์โทรศัพท์">
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
                             <label for="exampleFormControlInput1">ที่อยู่ที่ติดต่อได้ :</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" id="address" name="address" rows="3"placeholder="กรุณาใส่ที่อยู่"></textarea>
                             </div>
                         </div>
                         <div class="col-12">
