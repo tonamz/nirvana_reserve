@@ -35,9 +35,14 @@
                             <div class="form-group">
                             <label for="exampleFormControlSelect1">ยูนิต :</label>
                             <select class="form-control" name="id_unit">
-                            @foreach($unit as $units)
-                                <option name="id_unit" value="{{$units->id}}">{{ $units->unit }}</option>
-                            @endforeach
+                            @if(count($unit) == 1)
+                            <option name="id_unit" value="{{$unit->id}}">{{ $unit->unit }}</option>
+                            @else
+                                @foreach($unit as $units)
+                                    <option name="id_unit" value="{{$units->id}}">{{ $units->unit }}</option>
+                                @endforeach
+                            @endif
+
                             </select>
                             </div>
                         </div>

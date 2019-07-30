@@ -18,6 +18,14 @@ class ReserveController extends Controller
         $unit = DB::table('Unit')->where('status','0')->where('id_type',$type)->get();
         return view('reserve.reserve', ['types' => $types],['unit' => $unit]);
     }
+    public function  reserveunit($unit){
+
+        $units = DB::table('Unit')->where('id',$unit)->first();
+        $types = DB::table('types')->where('id',$units->id_type)->first();
+        
+        
+        return view('reserve.reserve', ['unit' => $units],['types' => $types]);
+    }
 
     public function  store(){
 
@@ -32,8 +40,28 @@ class ReserveController extends Controller
         'address'=> request()->address
                 
             ]);
+        
+         $affected = DB::update('update Unit set status = 1 where id = ?', [request()->id_unit]);
 
             return redirect(route('reserve'));
 
     }
+
+    public function checkstatus($type){
+
+        $unit = DB::table('Unit')->where('id_type',$type)->get();
+        $types = DB::table('types')->where('id', $type)->first();
+
+        return view('status.checkstatus',['types' => $types],['unit' => $unit]);
+    }
+
+    public function  detail($id){
+        $reserve = DB::table('reserves')->where('id_unit',$id)->get();
+        $units = DB::table('Unit')->where('id',$unit)->first();
+        $types = DB::table('types')->where('id',$units->id_type)->first();
+
+        return view('reserve.detail',['reserve' => $reserve], ['unit' => $units],['types' => $types]);
+    }
+
+
 }

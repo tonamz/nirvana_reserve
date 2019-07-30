@@ -16,56 +16,56 @@
             <div class="category">
                 <div class="row">
                     <div class="col-3">
-                        <a href="{{ route('checkstatus') }}">
+                        <a href="{{ route('checkstatus', ['type' => '1']) }}">
                             <button class="bt-category"
                             style="background-color:#717374;"
                             >PRIDE</button>
                         </a>
                     </div>
                     <div class="col-3">
-                        <a href="{{ route('checkstatus') }}">
+                        <a href="{{ route('checkstatus', ['type' => '2']) }}">
                             <button class="bt-category"
                             style="background-color:#293D57;"
                             >MOST</button>
                         </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '3']) }}">
                        <button class="bt-category"
                        style="background-color:#1F1D1A;"
                        >LIVE</button>
                        </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '4']) }}">
                        <button class="bt-category"
                        style="background-color:#648899;"
                        >NICHES</button>
                        </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '5']) }}">
                        <button class="bt-category"
                        style="background-color:#0E6884;"
                        >KEEN</button>
                        </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '6']) }}">
                        <button class="bt-category"
                        style="background-color:#2DAC99;"
                        >QUEST</button>
                        </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '7']) }}">
                        <button class="bt-category"
                        style="background-color:#3D84C2;"
                        >REACH</button>
                        </a>
                     </div>
                     <div class="col-3">
-                    <a href="{{ route('checkstatus') }}">
+                    <a href="{{ route('checkstatus', ['type' => '8']) }}">
                        <button class="bt-category"
                        style="background-color:#5BC7CE;"
                        >SAND</button>
