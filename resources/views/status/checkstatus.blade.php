@@ -2,7 +2,7 @@
     @extends('layouts.layout')
     @section('content')
         <div class="sidenav">
-            <img class="logo" src="image/nirvanalogo.png" alt="">
+            <img class="logo" src="../image/nirvanalogo.png" alt="">
             <a href="{{ route('status')}}">Check Status</a>
             <a href="{{ route('reserve')}}">Reserve</a>
             <a href="{{ route('log')}}">Log</a>

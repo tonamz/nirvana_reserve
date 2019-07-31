@@ -56,11 +56,11 @@ class ReserveController extends Controller
     }
 
     public function  detail($id){
-        $reserve = DB::table('reserves')->where('id_unit',$id)->get();
-        $units = DB::table('Unit')->where('id',$unit)->first();
+        $reserve = DB::table('reserves')->where('id_unit',$id)->first();
+        $units = DB::table('Unit')->where('id',$reserve->id_unit)->first();
         $types = DB::table('types')->where('id',$units->id_type)->first();
 
-        return view('reserve.detail',['reserve' => $reserve], ['unit' => $units],['types' => $types]);
+        return view('reserve.detail',['types' => $types,'unit' => $units,'reserve' => $reserve]);
     }
 
 

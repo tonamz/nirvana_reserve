@@ -58,3 +58,6 @@
   button{
     -webkit-appearance: none;
   }
+  h3{
+    color: dimgray;
+  }

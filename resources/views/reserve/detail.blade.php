@@ -20,39 +20,43 @@
                         <div class="col-4">
 
                                 <label for="exampleFormControlInput1">รูปแบบ :</label>
-                                <h3><span class="badge badge-secondary" ></span> </h3> 
+                                <h3 >{{$types->name}} </h3> 
 
                    
                         </div>
                         <div class="col-4">
                             <label for="exampleFormControlSelect1">ยูนิต :</label>
-
+                            <h3 >{{$unit->unit}} </h3> 
                         </div>
                         <div class="col-4">
 
                             <label for="exampleFormControlInput1">ราคา :</label>
-
+                            <h3 >{{$reserve->price}}</h3> 
 
                         </div>
                         <div class="col-6">
  
                             <label for="exampleFormControlInput1">ชื่อ :</label>
+                            <h3 >{{$reserve->firstname}} </h3> 
 
 
                         </div>
                         <div class="col-6">
                        
                             <label for="exampleFormControlInput1">นามสกุล :</label>
+                            <h3 >{{$reserve->lastname}}</h3> 
         
                         </div>
                         <div class="col-12">
 
                             <label for="exampleFormControlInput1">เบอร์โทรศัพท์ที่ติดต่อได้ :</label>
+                            <h3 >{{$reserve->telephone}} </h3> 
 
                         </div>
                         <div class="col-12">
 
                             <label for="exampleFormControlInput1">ที่อยู่ที่ติดต่อได้ :</label>
+                            <h3 >{{$reserve->address}}</h3> 
         
 
                         </div>
@@ -61,7 +65,7 @@
                              <label for="exampleFormControlFile1">สำเนาบัตรประชาชน : </label>
 
                         <div class="col-12">
-                            <button type="submit" class="w-100 btn btn-primary">Submit</button>
+                            <button type="submit" class="w-100 btn btn-primary">confirm</button>
                         </div>
                     </div>
 

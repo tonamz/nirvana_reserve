@@ -2,7 +2,7 @@
     @extends('layouts.layout')
     @section('content')
     <div class="sidenav">
-            <img class="logo" src="image/nirvanalogo.png" alt="">
+            <img class="logo" src="../image/nirvanalogo.png" alt="">
             <a href="{{ route('status')}}">Check Status</a>
             <a href="{{ route('reserve')}}">Reserve</a>
             <a href="{{ route('log')}}">Log</a>
@@ -35,12 +35,15 @@
                             <div class="form-group">
                             <label for="exampleFormControlSelect1">ยูนิต :</label>
                             <select class="form-control" name="id_unit">
-                            @if(count($unit) == 1)
-                            <option name="id_unit" value="{{$unit->id}}">{{ $unit->unit }}</option>
-                            @else
-                                @foreach($unit as $units)
+                   
+                
+                            @if(count(array($unit))>1)
+                            @foreach($units as $unit)
                                     <option name="id_unit" value="{{$units->id}}">{{ $units->unit }}</option>
                                 @endforeach
+                            @endif
+                            @if(count(array($unit))==1)
+                            <option name="id_unit" value="{{$unit->id}}">{{ $unit->unit }}</option>
                             @endif
 
                             </select>
