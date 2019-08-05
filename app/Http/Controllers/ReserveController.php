@@ -22,9 +22,10 @@ class ReserveController extends Controller
 
         $units = DB::table('Unit')->where('id',$unit)->first();
         $types = DB::table('types')->where('id',$units->id_type)->first();
+      
         
         
-        return view('reserve.reserve', ['unit' => $units],['types' => $types]);
+        return view('reserve.reserve2', ['unit' => $units],['types' => $types]);
     }
 
     public function  store(){
